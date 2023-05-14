@@ -1,312 +1,109 @@
-/* Estilos para la página web de marca personal */
-
-/* Estilos globales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Open Sans", sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-  }
-  
-  /* Estilos para el encabezado */
-  header {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-  
-  nav {
+//* estilos para el menú de navegación */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
   }
   
-  nav a {
-    color: #333;
-    font-weight: bold;
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    color: #fff;
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
+    padding: 10px;
   }
   
-  nav a:hover {
-    color: #007bff;
+  /* estilos para el encabezado */
+  header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
   }
   
-  /* Estilos para el encabezado y pie de página */
+  header h1 {
+    font-size: 36px;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  /* estilos para el contenedor principal */
   main {
-    margin-top: 70px;
-    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
   }
   
+  /* estilos para las secciones */
   section {
     margin-bottom: 40px;
   }
   
-  h1,
-  h2,
-  h3 {
-    font-weight: 400;
-    margin-bottom: 10px;
+  section h2 {
+    font-size: 24px;
+    margin-top: 0;
   }
   
-  h2 {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-  }
-  
-  ul {
-    list-style: none;
-    margin-left: 20px;
-  }
-  
-  li {
-    margin-bottom: 10px;
-  }
-  
-  /* Estilos para la sección de habilidades */
-  .skills {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .skill {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    width: calc(33.333% - 10px);
-  }
-  
-  .skill h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  
-  .skill p {
-    font-size: 0.9rem;
-  }
-  
-  /* Estilos para la sección de experiencia laboral */
-  .experience {
-    display: flex;
-    flex-direction: column;
-  }
-  
+  /* estilos para los trabajos */
   .job {
-    border-left: 4px solid #007bff;
-    padding-left: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .job h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  
-  .job p {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
+    margin-top: 0;
   }
   
   .job ul {
-    margin-left: 30px;
-  }
-  
-  .job ul li {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-  }
-  
-  .job ul li:last-child {
+    margin-top: 0;
     margin-bottom: 0;
   }
   
-  .job:last-child {
-    margin-bottom: 0;
-  }
-  
-  /* Estilos para la sección de educación */
-  .education {
+  /* estilos para el formulario de contacto */
+  form {
     display: flex;
     flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
   }
   
-  .school {
-    border-left: 4px solid #28a745;
-    padding-left: 10px;
-    margin-bottom: 30px;
-  }
-  
-  .school h3 {
-    font-size: 1.2rem;
+  label {
+    font-weight: bold;
     margin-bottom: 5px;
   }
   
-  .school p {
-    font-size: 0.9rem;
-    margin:  10px;
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px #ccc;
   }
   
-  .school ul {
-  margin-left: 30px;
+  textarea {
+    height: 150px;
   }
   
-  .school ul li {
-  font-size: 0.9rem;
-  margin-bottom: 5px;
+  input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
-  .school ul li:last-child {
-  margin-bottom: 0;
+  input[type="submit"]:hover {
+    background-color: #666;
   }
   
-  .school:last-child {
-  margin-bottom: 0;
-  }
-  
-  /* Estilos para el botón de descarga */
-  .download-button {
-  display: inline-block;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  text-decoration: none;
-  margin-bottom: 30px;
-  transition: all 0.3s ease-in-out;
-  }
-  
-  .download-button:hover {
-  background-color: #0062cc;
-  }
-  
-  /* Estilos para el pie de página */
-  footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  }
-  
-  footer a {
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-  }
-  
-  footer a:hover {
-  color: #007bff;
-  }
-  
-  /* Estilos para la sección del currículum */
-  .resume {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  }
-  
-  .resume h2 {
-  margin-bottom: 30px;
-  }
-  
-  .resume .language-buttons {
-  display: flex;
-  margin-bottom: 30px;
-  }
-  
-  .resume .language-buttons button {
-  background-color: transparent;
-  color: #007bff;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 10px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  }
-  
-  .resume .language-buttons button:hover,
-  .resume .language-buttons button.active {
-  border-bottom: 2px solid #007bff;
-  }
-  
-  .resume .summary {
-  display: none;
-  }
-  
-  .resume .summary.active {
-  display: block;
-  margin-bottom: 30px;
-  }
-  
-  .resume .summary p {
-  margin-bottom: 10px;
-  }
-  
-  .resume .experience,
-  .resume .education {
-  display: none;
-  }
-  
-  .resume .experience.active,
-  .resume .education.active {
-  display: block;
-  margin-bottom: 30px;
-  }
-  
-  .resume .experience .job,
-  .resume .education .school {
-  margin-bottom: 30px;
-  }
-  
-  .resume .experience .job:last-child,
-  .resume .education .school:last-child {
-  margin-bottom: 0;
-  }
-  
-  /* Estilos para el botón de volver al inicio */
-  .back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
-  }
-  
-  .back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-  }
-  
-  .back-to-top:hover {
-  background-color: #0062cc;
-  }
-  
-  .back-to-top i {
-  font-size: 1.2rem;
-  }
