@@ -3,8 +3,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #fff;
+    background-color: #444eb6;
+    color: #57a5d2;
     padding: 10px;
   }
   
@@ -25,13 +25,13 @@ nav {
   
   /* estilos para el encabezado */
   header {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
+    background-color: #5ea4e6;
+    border-bottom: 1px solid #1e1381;
   }
   
   header h1 {
     font-size: 36px;
-    color: #333;
+    color: #3e0c9b;
     margin: 0;
     padding: 20px;
   }
@@ -87,7 +87,7 @@ nav {
     margin-bottom: 20px;
     border-radius: 5px;
     border: none;
-    box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #6873c5;
   }
   
   textarea {
@@ -95,7 +95,7 @@ nav {
   }
   
   input[type="submit"] {
-    background-color: #333;
+    background-color: #5264be;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -104,6 +104,6 @@ nav {
   }
   
   input[type="submit"]:hover {
-    background-color: #666;
+    background-color: #263487;
   }
   
