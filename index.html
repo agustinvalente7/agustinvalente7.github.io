@@ -96,13 +96,13 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
 
         header {
-            margin-bottom: 8rem;
+            margin-bottom: 7rem;
             margin-top: 4rem;
         }
 
@@ -128,12 +128,12 @@
             font-size: 1.15rem;
             color: var(--text-primary);
             line-height: 1.6;
-            max-width: 850px;
+            max-width: 900px;
             opacity: 0.8;
         }
 
         section {
-            margin-bottom: 10rem;
+            margin-bottom: 9rem;
         }
 
         h2 {
@@ -158,7 +158,7 @@
             display: grid;
             grid-template-columns: 240px 1fr;
             gap: 2rem;
-            margin-bottom: 6rem;
+            margin-bottom: 5rem;
         }
 
         @media (max-width: 768px) {
@@ -222,7 +222,7 @@
 
         .bento-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
 
@@ -230,16 +230,11 @@
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 2.8rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .bento-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
+            padding: 2.5rem;
         }
 
         .bento-card.wide {
-            grid-column: span 2;
+            grid-column: 1 / -1;
         }
 
         .skill-list {
@@ -250,18 +245,12 @@
 
         .skill-tag {
             background: rgba(255, 255, 255, 0.04);
-            padding: 0.6rem 1.1rem;
+            padding: 0.5rem 1rem;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: #ccc;
             border: 1px solid transparent;
-        }
-
-        .skill-tag:hover {
-            color: #fff;
-            border-color: var(--accent-secondary);
-            background: rgba(0, 113, 227, 0.05);
         }
 
         .nav-container {
@@ -278,28 +267,26 @@
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border: 1px solid var(--glass-border);
-            padding: 0.8rem 1.8rem;
+            padding: 0.8rem 1.6rem;
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
             backdrop-filter: blur(25px);
             transition: all 0.2s ease;
             font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            min-width: 110px;
+            min-width: 100px;
             text-align: center;
         }
 
         .pdf-btn {
-            padding: 0.8rem 1.1rem;
             min-width: auto;
+            padding: 0.8rem 1.1rem;
         }
 
         .lang-btn:hover,
         .pdf-btn:hover {
             background: #fff;
             color: #000;
-            transform: translateY(-2px);
         }
 
         footer {
@@ -324,7 +311,7 @@
 <body>
     <div class="nav-container no-print">
         <button class="lang-btn" id="lang-toggle" onclick="cycleLang()">Español</button>
-        <button class="pdf-btn" onclick="window.print()" title="Descargar como PDF">
+        <button class="pdf-btn" onclick="window.print()" title="Download PDF">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -339,12 +326,12 @@
         <div data-lang="es">
             <header>
                 <h1>Agustín Miguel da Costa Valente</h1>
-                <p class="hero-title">Application Engineer | Abogado Digital | Especialista en IA | Consultor IT Senior
-                </p>
+                <p class="hero-title">Application Engineer | Abogado Digital | Especialista en IA | Consultor
+                    Tecnológico Senior</p>
                 <div class="summary">
-                    Más de 25 años liderando la intersección entre ingeniería y derecho. Experto en soporte de
-                    aplicaciones críticas, auditoría de cumplimiento normativo (RGPD) y arquitectura de sistemas
-                    estatales, integrando la eficiencia técnica con el rigor jurídico.
+                    Estratega ejecutivo con más de 25 años de trayectoria uniendo la ingeniería de sistemas con el
+                    derecho digital. Experto en soporte de aplicaciones de misión crítica, cumplimiento normativo (RGPD)
+                    para gobiernos regionales y liderazgo en proyectos de modernización estatal.
                 </div>
             </header>
 
@@ -356,78 +343,108 @@
                         <h3 class="company">Unipartner IT Services (Tranquilidade)</h3>
                         <p class="role">Application Engineer | Critical Support Specialist</p>
                         <ul class="details-list">
-                            <li class="detail-point">Resolución técnica avanzada en arquitecturas de Salesforce,
-                                Outsystems, Sitecore y LGI.</li>
-                            <li class="detail-point">Análisis funcional profundo de simuladores de seguros y validación
-                                de lógica transacional compleja.</li>
-                            <li class="detail-point">Gestión de despliegues críticos via Azure DevOps y monitoreo
-                                avanzado con Kibana y SQL.</li>
+                            <li class="detail-point">Resolución técnica avanzada en arquitecturas complejas de seguros:
+                                Salesforce, Outsystems, Sitecore y LGI.</li>
+                            <li class="detail-point">Análisis funcional de simuladores de seguros y validación de lógica
+                                transacional compleja.</li>
+                            <li class="detail-point">Monitoreo proactivo con Kibana y gestión de despliegues críticos
+                                mediante Azure DevOps.</li>
                         </ul>
                     </div>
                 </div>
-                <!-- Exhaustive Details ES -->
+
                 <div class="experience-grid">
                     <div class="period">JUL 2023 — MAY 2024</div>
                     <div>
-                        <h3 class="company">Unipartner IT Services | Gobierno Regional</h3>
-                        <p class="role">Lead Consultant & GDPR Auditor (Madeira)</p>
+                        <h3 class="company">Unipartner IT Services | Gobierno de Madeira</h3>
+                        <p class="role">Lead Consultant & GDPR Compliance Auditor</p>
                         <ul class="details-list">
-                            <li class="detail-point">Dirección técnica en el proyecto de cumplimiento del RGPD para 12
-                                entidades gubernamentales críticas regionales.</li>
-                            <li class="detail-point">Mapeo de procesos de datos personales y auditoría bajo el
-                                referencial DGLAB.</li>
+                            <li class="detail-point">Dirección técnica en adecuación al RGPD para 12 entidades
+                                gubernamentales críticas regionales.</li>
+                            <li class="detail-point">Auditoría de tratamiento de datos personales y modelado de procesos
+                                bajo referencial DGLAB (LC-MEF).</li>
                             <li class="detail-point">Emisión de dictámenes técnicos y manuales de procedimiento para
-                                mitigación de riesgos operativos.</li>
+                                mitigación de riesgos legales y tecnológicos.</li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="experience-grid">
                     <div class="period">1998 — 2009</div>
                     <div>
-                        <h3 class="company">Tribunal de Cuentas (Venezuela)</h3>
+                        <h3 class="company">Tribunal de Cuentas (Edo. Carabobo)</h3>
                         <p class="role">Gerente General de Sistemas y Dirección Regional</p>
                         <ul class="details-list">
                             <li class="detail-point">Arquitecto responsable de la modernización tecnológica y
-                                automatización del control fiscal senior regional.</li>
-                            <li class="detail-point">Implementación del Sistema Integral de Gestión Documental y
-                                seguridad de infraestructura crítica.</li>
-                            <li class="detail-point">Administración de redes corporativas, bases de datos empresariales
-                                y servidores Windows Server.</li>
+                                automatización integral del control fiscal estatal.</li>
+                            <li class="detail-point">Implementación del Sistema de Gestión Documental y seguridad de
+                                infraestructura crítica de red nacional.</li>
+                            <li class="detail-point">Dirección de administración de servidores Windows Server, bases de
+                                datos empresariales y redes corporativas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="period">2017 — 2021</div>
+                    <div>
+                        <h3 class="company">P. Europa (Distribución Alimentaria)</h3>
+                        <p class="role">Socio-Gerente General</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Dirección ejecutiva de un grupo empresarial en el sector de
+                                distribución alimentaria y retail.</li>
+                            <li class="detail-point">Optimización logística nacional e internacional y gestión
+                                estratégica de la cadena de suministro.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h2>Especialidades & Formación</h2>
+                <h2>Academia y Especialidades</h2>
+                <div class="experience-grid">
+                    <div class="period">2011 — 2017</div>
+                    <div>
+                        <h3 class="company">Universidad de Carabobo</h3>
+                        <p class="role">Profesor Titular — Facultad de Ciencias Jurídicas</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Cátedra de Práctica Jurídica: Modernización del currículo mediante
+                                la integración de gestión digital.</li>
+                            <li class="detail-point">Conferencista en foros sobre Derecho Digital y transformación
+                                tecnológica del Estado.</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="bento-grid">
                     <div class="bento-card">
-                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">Idiomas
-                        </h3>
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Habilidades
+                            Core</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Azure AI Fundamentals</span>
+                            <span class="skill-tag">SQL Advanced</span>
+                            <span class="skill-tag">Kibana / DevOps</span>
+                            <span class="skill-tag">RGPD Audit</span>
+                            <span class="skill-tag">Derecho Digital</span>
+                        </div>
+                    </div>
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Idiomas</h3>
                         <div class="skill-list">
                             <span class="skill-tag">Español (Nativo)</span>
                             <span class="skill-tag">Portugués (Bilingüe)</span>
                             <span class="skill-tag">Inglés (Profesional)</span>
                         </div>
                     </div>
-                    <div class="bento-card">
-                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">IA & Tech
-                        </h3>
-                        <div class="skill-list">
-                            <span class="skill-tag">Azure AI-900</span>
-                            <span class="skill-tag">SQL Advanced</span>
-                            <span class="skill-tag">Azure DevOps</span>
-                            <span class="skill-tag">Kibana</span>
-                        </div>
-                    </div>
                     <div class="bento-card wide">
-                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">Formación
-                            Superior</h3>
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Formación de
+                            Élite</h3>
                         <ul class="details-list">
-                            <li class="detail-point"><strong>Abogado</strong> (UAM), 2009 | <strong>Magíster en Gestión
-                                    Pública</strong> (UNED), 2007.</li>
-                            <li class="detail-point"><strong>Ingeniero de Información</strong> (UNITEC), 1998.</li>
-                            <li class="detail-point">Profesor Universitario de Práctica Jurídica (UC), 2011-2017.</li>
+                            <li class="detail-point"><strong>Abogado</strong> (UAM, 2009) | <strong>Magíster en Gestión
+                                    Pública</strong> (UNED, Madrid, 2007).</li>
+                            <li class="detail-point"><strong>Ingeniero de Información</strong> (UNITEC, 1998).</li>
+                            <li class="detail-point">Certificaciones: Google IT Support, Azure AI-900, AZ-900 e ISTQB.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -438,12 +455,12 @@
         <div data-lang="pt">
             <header>
                 <h1>Agustín Miguel da Costa Valente</h1>
-                <p class="hero-title">Engenheiro de Sistemas | Advogado Digital | Especialista em IA | Consultor IT
-                    Sénior</p>
+                <p class="hero-title">Engenheiro de Sistemas | Advogado Digital | Especialista em IA | Consultor
+                    Tecnológico Sénior</p>
                 <div class="summary">
-                    Mais de 25 anos liderando a interseção entre engenharia e direito. Especialista em suporte de
-                    aplicações críticas, auditoria de conformidade (RGPD) e arquitetura de sistemas estatais, integrando
-                    a eficiência técnica com o rigor jurídico.
+                    Estrategista executivo com mais de 25 anos de trajetória unindo engenharia de sistemas com direito
+                    digital. Especialista em suporte de aplicações de missão crítica, conformidade normativa (RGPD) para
+                    governos regionais e liderança em projetos de modernização estatal.
                 </div>
             </header>
 
@@ -453,28 +470,110 @@
                     <div class="period">JUN 2024 — PRESENTE</div>
                     <div>
                         <h3 class="company">Unipartner IT Services (Tranquilidade)</h3>
-                        <p class="role">Application Engineer | Especialista em Suporte Crítico</p>
+                        <p class="role">Application Engineer | Specialist em Suporte Crítico</p>
                         <ul class="details-list">
-                            <li class="detail-point">Resolução técnica avançada em arquiteturas Salesforce, Outsystems,
-                                Sitecore e LGI.</li>
-                            <li class="detail-point">Análise funcional profunda de simuladores de seguros e validação de
-                                lógica transacional complexa.</li>
-                            <li class="detail-point">Monitorização proativa com Kibana e gestão de deploiements via
-                                Azure DevOps.</li>
+                            <li class="detail-point">Resolução técnica avançada em arquiteturas complexas de seguros:
+                                Salesforce, Outsystems, Sitecore e LGI.</li>
+                            <li class="detail-point">Análise funcional de simuladores de seguros e validação de lógica
+                                transacional complexa.</li>
+                            <li class="detail-point">Monitorização proativa com Kibana e gestão de deploiements críticos
+                                via Azure DevOps.</li>
                         </ul>
                     </div>
                 </div>
-                <!-- Exhaustive Details PT -->
+
                 <div class="experience-grid">
                     <div class="period">JUL 2023 — MAI 2024</div>
                     <div>
-                        <h3 class="company">Unipartner IT Services | Governo Regional</h3>
-                        <p class="role">Lead Consultant & Auditor de RGPD (Madeira)</p>
+                        <h3 class="company">Unipartner IT Services | Governo da Madeira</h3>
+                        <p class="role">Lead Consultant & Auditor de Conformidade RGPD</p>
                         <ul class="details-list">
                             <li class="detail-point">Direção técnica na adequação ao RGPD para 12 entidades
-                                governamentais críticas.</li>
-                            <li class="detail-point">Auditoria de sistemas legados e modelação de processos sob
-                                referencial DGLAB.</li>
+                                governamentais críticas regionais.</li>
+                            <li class="detail-point">Auditoria de tratamento de dados pessoais e modelação de processos
+                                sob o referencial DGLAB (LC-MEF).</li>
+                            <li class="detail-point">Emissão de pareceres técnicos e manuais de procedimento para
+                                mitigação de riscos legais e tecnológicos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="period">1998 — 2009</div>
+                    <div>
+                        <h3 class="company">Tribunal de Contas (Edo. Carabobo)</h3>
+                        <p class="role">Gerente Geral de Sistemas e Direção Regional</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Arquiteto responsável pela modernização tecnológica e automatização
+                                integral do controlo fiscal estatal.</li>
+                            <li class="detail-point">Implementação do Sistema de Gestão Documental e segurança da
+                                infraestrutura de rede nacional.</li>
+                            <li class="detail-point">Gestão da administração de servidores Windows Server, bases de
+                                dados empresariais e redes corporativas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="period">2017 — 2021</div>
+                    <div>
+                        <h3 class="company">P. Europa (Distribuição Alimentar)</h3>
+                        <p class="role">Sócio-Gerente Geral</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Direção executiva de um grupo empresarial no setor de distribuição
+                                alimentar e retail.</li>
+                            <li class="detail-point">Otimização logística nacional e internacional e gestão estratégica
+                                da cadeia de abastecimento.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Academia e Especialidades</h2>
+                <div class="experience-grid">
+                    <div class="period">2011 — 2017</div>
+                    <div>
+                        <h3 class="company">Universidade de Carabobo</h3>
+                        <p class="role">Professor Titular — Faculdade de Direito</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Cátedra de Prática Jurídica: Modernização do currículo através da
+                                integração de gestão digital.</li>
+                            <li class="detail-point">Conferencista em fóruns sobre Direito Digital e transformação
+                                tecnológica do Estado.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Habilidades
+                            Core</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Azure AI Fundamentals</span>
+                            <span class="skill-tag">SQL Advanced</span>
+                            <span class="skill-tag">Kibana / DevOps</span>
+                            <span class="skill-tag">Auditoria RGPD</span>
+                            <span class="skill-tag">Direito Digital</span>
+                        </div>
+                    </div>
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Idiomas</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Espanhol (Nativo)</span>
+                            <span class="skill-tag">Português (Bilingue)</span>
+                            <span class="skill-tag">Inglês (Profissional)</span>
+                        </div>
+                    </div>
+                    <div class="bento-card wide">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Educação de
+                            Elite</h3>
+                        <ul class="details-list">
+                            <li class="detail-point"><strong>Advogado</strong> (UAM, 2009) | <strong>Mestrado em Gestão
+                                    Pública</strong> (UNED, Madrid, 2007).</li>
+                            <li class="detail-point"><strong>Engenheiro de Informação</strong> (UNITEC, 1998).</li>
+                            <li class="detail-point">Certificações: Google IT Support, Azure AI-900, AZ-900 e ISTQB.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -485,11 +584,11 @@
         <div data-lang="en">
             <header>
                 <h1>Agustín Miguel da Costa Valente</h1>
-                <p class="hero-title">Application Engineer | Digital Lawyer | AI Specialist | Senior IT Consultant</p>
+                <p class="hero-title">Application Engineer | Digital Lawyer | AI Specialist | Senior Tech Consultant</p>
                 <div class="summary">
-                    Over 25 years leading the intersection between engineering and law. Expert in mission-critical
-                    application support, regulatory compliance auditing (GDPR), and state systems architecture, merging
-                    technical efficiency with legal rigor.
+                    Executive strategist with over 25 years of experience merging systems engineering with digital law.
+                    Expert in mission-critical application support, regulatory compliance (GDPR) for regional
+                    governments, and leadership in state modernization projects.
                 </div>
             </header>
 
@@ -501,12 +600,12 @@
                         <h3 class="company">Unipartner IT Services (Tranquilidade)</h3>
                         <p class="role">Application Engineer | Critical Support Specialist</p>
                         <ul class="details-list">
-                            <li class="detail-point">Advanced technical resolution in architectures including
-                                Salesforce, Outsystems, Sitecore, and LGI.</li>
-                            <li class="detail-point">Deep functional analysis of insurance simulators and validation of
+                            <li class="detail-point">Advanced technical resolution in complex insurance architectures:
+                                Salesforce, Outsystems, Sitecore and LGI.</li>
+                            <li class="detail-point">Functional analysis of insurance simulators and validation of
                                 complex business transaction logic.</li>
-                            <li class="detail-point">Proactive monitoring with Kibana and deployment management via
-                                Azure DevOps.</li>
+                            <li class="detail-point">Proactive monitoring with Kibana and critical deployment management
+                                via Azure DevOps.</li>
                         </ul>
                     </div>
                 </div>
@@ -515,12 +614,14 @@
                     <div class="period">JUL 2023 — MAY 2024</div>
                     <div>
                         <h3 class="company">Unipartner IT Services | Regional Government</h3>
-                        <p class="role">Lead Consultant & GDPR Auditor (Madeira)</p>
+                        <p class="role">Lead Consultant & GDPR Compliance Auditor (Madeira)</p>
                         <ul class="details-list">
-                            <li class="detail-point">Technical lead for GDPR compliance across 12 critical regional
+                            <li class="detail-point">Technical direction for GDPR compliance across 12 critical regional
                                 government entities.</li>
-                            <li class="detail-point">Legacy systems auditing and process modeling under DGLAB
-                                guidelines.</li>
+                            <li class="detail-point">Personal data process auditing and workflow modeling under DGLAB
+                                (LC-MEF) framework.</li>
+                            <li class="detail-point">Issuance of technical opinions and procedure manuals for legal and
+                                technological risk mitigation.</li>
                         </ul>
                     </div>
                 </div>
@@ -528,13 +629,80 @@
                 <div class="experience-grid">
                     <div class="period">1998 — 2009</div>
                     <div>
-                        <h3 class="company">Court of Accounts (Venezuela)</h3>
+                        <h3 class="company">Court of Accounts (Carabobo State)</h3>
                         <p class="role">General Manager of Systems & Regional Director</p>
                         <ul class="details-list">
-                            <li class="detail-point">Architect responsible for technological modernization and
-                                high-level tax control automation.</li>
-                            <li class="detail-point">Critical infrastructure management: networking, security, and
-                                corporate databases.</li>
+                            <li class="detail-point">Architect responsible for technological modernization and integral
+                                state tax control automation.</li>
+                            <li class="detail-point">Implementation of the Document Management System and critical
+                                infrastructure security.</li>
+                            <li class="detail-point">Management of Windows Server environments, enterprise databases,
+                                and corporate networks.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="period">2017 — 2021</div>
+                    <div>
+                        <h3 class="company">P. Europa (Food Distribution Group)</h3>
+                        <p class="role">Managing Partner & General Manager</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Executive leadership of a business group in the food distribution
+                                and retail sector.</li>
+                            <li class="detail-point">National and international logistics optimization and strategic
+                                supply chain management.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Academia & Specialties</h2>
+                <div class="experience-grid">
+                    <div class="period">2011 — 2017</div>
+                    <div>
+                        <h3 class="company">University of Carabobo</h3>
+                        <p class="role">Law School Professor — Faculty of Law</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Chair of Legal Practice: Curriculum modernization through digital
+                                management integration.</li>
+                            <li class="detail-point">Lecturer in forums on Digital Law and state technological
+                                transformation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bento-grid">
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Core Skills
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Azure AI Fundamentals</span>
+                            <span class="skill-tag">SQL Advanced</span>
+                            <span class="skill-tag">Kibana / DevOps</span>
+                            <span class="skill-tag">GDPR Audit</span>
+                            <span class="skill-tag">Digital Law</span>
+                        </div>
+                    </div>
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Languages
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Spanish (Native)</span>
+                            <span class="skill-tag">Portuguese (Bilingual)</span>
+                            <span class="skill-tag">English (Professional)</span>
+                        </div>
+                    </div>
+                    <div class="bento-card wide">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1rem; color: var(--accent-secondary);">Elite
+                            Education</h3>
+                        <ul class="details-list">
+                            <li class="detail-point"><strong>Lawyer</strong> (UAM, 2009) | <strong>Master in Public
+                                    Management</strong> (UNED, Madrid, 2007).</li>
+                            <li class="detail-point"><strong>Information Engineer</strong> (UNITEC, 1998).</li>
+                            <li class="detail-point">Certifications: Google IT Support, Azure AI-900, AZ-900 & ISTQB.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -543,6 +711,8 @@
 
         <footer>
             <p class="footer-name">Agustín Miguel da Costa Valente</p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Trilingual Executive Portfolio — ES / PT / EN
+            </p>
         </footer>
     </div>
 
