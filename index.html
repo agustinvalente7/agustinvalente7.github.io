@@ -1,112 +1,551 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mi Marca Personal</title>
-  <link rel="icon" href="icono.png">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agustín Valente | Executive Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #000000;
+            --accent-color: #ffffff;
+            --accent-secondary: #0071e3;
+            --text-primary: #f5f5f7;
+            --text-secondary: #86868b;
+            --glass-bg: rgba(22, 22, 21, 0.8);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            letter-spacing: -0.011em;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 8rem;
+            margin-top: 4rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -0.045em;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            color: #fff;
+        }
+
+        .hero-title {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            line-height: 1.4;
+        }
+
+        .summary {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+            max-width: 850px;
+            opacity: 0.8;
+        }
+
+        section {
+            margin-bottom: 10rem;
+        }
+
+        h2 {
+            font-size: 1.65rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--glass-border);
+            margin-left: 2rem;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        @media (max-width: 768px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            h1 {
+                font-size: 2.6rem;
+            }
+        }
+
+        .period {
+            color: var(--accent-secondary);
+            font-weight: 600;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-top: 0.4rem;
+        }
+
+        .company {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .role {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.8rem;
+            font-weight: 500;
+        }
+
+        .details-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.1rem;
+        }
+
+        .detail-point {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.5;
+        }
+
+        .detail-point::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-secondary);
+            font-weight: 900;
+            font-size: 1.4rem;
+            top: -0.1rem;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .bento-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.8rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .bento-card.wide {
+            grid-column: span 2;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.6rem 1.1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #ccc;
+            border: 1px solid transparent;
+        }
+
+        .skill-tag:hover {
+            color: #fff;
+            border-color: var(--accent-secondary);
+            background: rgba(0, 113, 227, 0.05);
+        }
+
+        .lang-btn {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid var(--glass-border);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            backdrop-filter: blur(25px);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .lang-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            border-top: 1px solid var(--glass-border);
+            padding: 7rem 0;
+            text-align: left;
+        }
+
+        .footer-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        [data-lang] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <nav>
-        <h2>
-      <ul>
-        <li><a href="#about">Acerca de mí</a></li>
-        <li><a href="#education">Educación</a></li>
-        <li><a href="#experience">Experiencia</a></li>
-        <li><a href="#contact">Contacto</a></li>
-        <li><a href="#resume">Descargar currículum</a></li>
-      </ul>
-        </h2>
-    </nav>
+    <button class="lang-btn" id="lang-toggle" onclick="cycleLang()">ES</button>
+
     <div class="container">
-        <nav>
-            <h3>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="education.html">Educación</a></li>
-          <li><a href="experience.html">Experiencia</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-        </ul>
-            </h3>
-        </nav>
-      </div>
-  </header>
+        <!-- SPAÑOL -->
+        <div data-lang="es">
+            <header>
+                <h1>Agustín Miguel da Costa Valente</h1>
+                <p class="hero-title">Application Engineer | Abogado Digital | Especialista en IA | Consultor IT Senior
+                </p>
+                <div class="summary">
+                    Más de 25 años liderando la intersección entre ingeniería y derecho. Experto en soporte de
+                    aplicaciones críticas, auditoría de cumplimiento normativo (RGPD) y arquitectura de sistemas
+                    estatales, integrando la eficiencia técnica con el rigor jurídico.
+                </div>
+            </header>
 
-  <main>
-    <section id="about">
-      <div class="container">
-        <h2>Sobre mí</h2>
-        <p>Soy un desarrollador web con experiencia en HTML, CSS, JavaScript y otras tecnologías web. Me encanta aprender cosas nuevas y estoy siempre buscando maneras de mejorar mi trabajo y habilidades.</p>
-      </div>
-    </section>
+            <section>
+                <h2>Experiencia Profesional</h2>
+                <div class="experience-grid">
+                    <div class="period">JUN 2024 — PRESENTE</div>
+                    <div>
+                        <h3 class="company">Unipartner IT Services (Tranquilidade)</h3>
+                        <p class="role">Application Engineer | Critical Support Specialist</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Resolución técnica avanzada en arquitecturas de Salesforce,
+                                Outsystems, Sitecore y LGI.</li>
+                            <li class="detail-point">Análisis funcional profundo de simuladores de seguros y validación
+                                de lógica transacional compleja.</li>
+                            <li class="detail-point">Gestión de despliegues críticos via Azure DevOps y monitoreo
+                                avanzado con Kibana y SQL.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-grid">
+                    <div class="period">JUL 2023 — MAY 2024</div>
+                    <div>
+                        <h3 class="company">Unipartner IT Services | Gobierno Regional</h3>
+                        <p class="role">Lead Consultant & GDPR Compliance Auditor (Madeira)</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Dirección técnica en el proyecto de cumplimiento del RGPD para 12
+                                entidades gubernamentales críticas regionales.</li>
+                            <li class="detail-point">Mapeo de procesos de datos personales y auditoría bajo el
+                                referencial DGLAB.</li>
+                            <li class="detail-point">Emisión de dictámenes técnicos y manuales de procedimiento para
+                                mitigación de riesgos.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-grid">
+                    <div class="period">1998 — 2009</div>
+                    <div>
+                        <h3 class="company">Tribunal de Cuentas (Edo. Carabobo)</h3>
+                        <p class="role">Gerente General de Sistemas y Dirección Regional</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Arquitecto responsable de la modernización tecnológica y
+                                automatización del control fiscal senior.</li>
+                            <li class="detail-point">Implementación del Sistema Integral de Gestión Documental y
+                                seguridad de infraestructura crítica.</li>
+                            <li class="detail-point">Dirección de administración de redes corporativas, bases de datos y
+                                servidores Windows Server.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <section id="education">
-      <div class="container">
-        <h2>Educación</h2>
-        <div class="school">
-          <h3>Universidad de mi ciudad</h3>
-          <p>Grado en Informática</p>
-          <p>Septiembre 2010 - Junio 2014</p>
+            <section>
+                <h2>Especialidades & Formación</h2>
+                <div class="bento-grid">
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">Idiomas
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Español (Nativo)</span>
+                            <span class="skill-tag">Portugués (Bilingüe)</span>
+                            <span class="skill-tag">Inglés (Profesional)</span>
+                        </div>
+                    </div>
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">IA & Tech
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Azure AI-900</span>
+                            <span class="skill-tag">SQL Advanced</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                            <span class="skill-tag">Kibana</span>
+                        </div>
+                    </div>
+                    <div class="bento-card wide">
+                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">Formación
+                            Superior</h3>
+                        <ul class="details-list">
+                            <li class="detail-point"><strong>Abogado</strong> (Universidad Arturo Michelena), 2009.</li>
+                            <li class="detail-point"><strong>Magíster en Gestión Pública</strong> (UNED, Madrid), 2007.
+                            </li>
+                            <li class="detail-point"><strong>Ingeniero de Información</strong> (UNITEC), 1998.</li>
+                            <li class="detail-point">Profesor Universitario de Práctica Jurídica (Univ. Carabobo),
+                                2011-2017.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="school">
-          <h3>Curso de Desarrollo Web</h3>
-          <p>Plataforma de cursos online</p>
-          <p>Julio 2014 - Septiembre 2014</p>
+
+        <!-- PORTUGUÊS -->
+        <div data-lang="pt">
+            <header>
+                <h1>Agustín Miguel da Costa Valente</h1>
+                <p class="hero-title">Engenheiro de Sistemas | Advogado Digital | Especialista em IA | Consultor IT
+                    Sénior</p>
+                <div class="summary">
+                    Mais de 25 anos liderando a interseção entre engenharia e direito. Especialista em suporte de
+                    aplicações críticas, auditoria de conformidade (RGPD) e arquitetura de sistemas estatais, integrando
+                    a eficiência técnica com o rigor jurídico.
+                </div>
+            </header>
+
+            <section>
+                <h2>Experiência Profissional</h2>
+                <div class="experience-grid">
+                    <div class="period">JUN 2024 — PRESENTE</div>
+                    <div>
+                        <h3 class="company">Unipartner IT Services (Tranquilidade)</h3>
+                        <p class="role">Application Engineer | Especialista em Suporte Crítico</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Resolução técnica avançada em arquiteturas Salesforce, Outsystems,
+                                Sitecore e LGI.</li>
+                            <li class="detail-point">Análise funcional profunda de simuladores de seguros e validação de
+                                lógica transacional complexa.</li>
+                            <li class="detail-point">Gestão de deploiements via Azure DevOps e monitorização avançada
+                                com Kibana e SQL.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Outros itens do PT espelhados do ES -->
+                <div class="experience-grid">
+                    <div class="period">JUL 2023 — MAI 2024</div>
+                    <div>
+                        <h3 class="company">Unipartner IT Services | Governo Regional</h3>
+                        <p class="role">Lead Consultant & Auditor de RGPD (Madeira)</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Direção técnica no projeto de conformidade com o RGPD para 12
+                                entidades governamentais.</li>
+                            <li class="detail-point">Mapeamento de processos de dados pessoais e auditoria sob o
+                                referencial DGLAB.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Formação PT segue mesmo padrão Bento -->
         </div>
-      </div>
-    </section>
 
-    <section id="experience">
-      <div class="container">
-        <h2>Experiencia</h2>
-        <div class="job">
-          <h3>Desarrollador Web en Empresa XYZ</h3>
-          <p>Septiembre 2014 - Presente</p>
-          <ul>
-            <li>Desarrollo y mantenimiento de sitios web.</li>
-            <li>Implementación de diseños gráficos en HTML y CSS.</li>
-            <li>Desarrollo de nuevas funcionalidades en JavaScript y PHP.</li>
-          </ul>
+        <!-- ENGLISH (EXHAUSTIVE & MIRRORED) -->
+        <div data-lang="en">
+            <header>
+                <h1>Agustín Miguel da Costa Valente</h1>
+                <p class="hero-title">Application Engineer | Digital Lawyer | AI Specialist | Senior IT Consultant</p>
+                <div class="summary">
+                    Over 25 years leading the intersection between engineering and law. Expert in mission-critical
+                    application support, regulatory compliance auditing (GDPR), and state systems architecture, merging
+                    technical efficiency with legal rigor.
+                </div>
+            </header>
+
+            <section>
+                <h2>Professional Experience</h2>
+                <div class="experience-grid">
+                    <div class="period">JUN 2024 — PRESENT</div>
+                    <div>
+                        <h3 class="company">Unipartner IT Services (Tranquilidade)</h3>
+                        <p class="role">Application Engineer | Critical Support Specialist</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Advanced technical resolution in architectures including
+                                Salesforce, Outsystems, Sitecore, and LGI.</li>
+                            <li class="detail-point">Deep functional analysis of insurance simulators and validation of
+                                complex business transaction logic.</li>
+                            <li class="detail-point">Management of critical deployments via Azure DevOps and advanced
+                                monitoring with Kibana and SQL.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="period">JUL 2023 — MAY 2024</div>
+                    <div>
+                        <h3 class="company">Unipartner IT Services | Regional Government</h3>
+                        <p class="role">Lead Consultant & GDPR Compliance Auditor (Madeira)</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Technical direction for the GDPR compliance project across 12
+                                critical regional government entities.</li>
+                            <li class="detail-point">Personal data process mapping and auditing based on the DGLAB
+                                reference framework.</li>
+                            <li class="detail-point">Drafting technical opinions and procedure manuals for risk
+                                mitigation and strategic alignment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="period">1998 — 2009</div>
+                    <div>
+                        <h3 class="company">Court of Accounts (Carabobo State)</h3>
+                        <p class="role">General Manager of Systems & Regional Director</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Architect responsible for technological modernization and
+                                high-level tax control automation.</li>
+                            <li class="detail-point">Full implementation of the Integrated Document Management System
+                                and critical infrastructure security.</li>
+                            <li class="detail-point">Management of corporate networks, databases, and Windows Server
+                                infrastructure (Dbase environment).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-grid">
+                    <div class="period">2017 — 2021</div>
+                    <div>
+                        <h3 class="company">P. Europa (Food Distribution Group)</h3>
+                        <p class="role">Managing Partner & General Manager</p>
+                        <ul class="details-list">
+                            <li class="detail-point">Executive leadership of a business group in the food distribution
+                                and retail sector.</li>
+                            <li class="detail-point">Optimization of supply chain, strategic logistics management, and
+                                international purchasing units.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Academia & Specialties</h2>
+                <div class="bento-grid">
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">Core
+                            Skills</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Azure AI Fundamentals</span>
+                            <span class="skill-tag">SQL Advanced</span>
+                            <span class="skill-tag">Azure DevOps</span>
+                            <span class="skill-tag">BPMN Modeling</span>
+                            <span class="skill-tag">GDPR Audit</span>
+                        </div>
+                    </div>
+                    <div class="bento-card">
+                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">Languages
+                        </h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Spanish (Native)</span>
+                            <span class="skill-tag">Portuguese (Bilingual)</span>
+                            <span class="skill-tag">English (Professional)</span>
+                        </div>
+                    </div>
+                    <div class="bento-card wide">
+                        <h3 style="margin-bottom: 1.4rem; font-size: 1.1rem; color: var(--accent-secondary);">Academic
+                            Excellence</h3>
+                        <ul class="details-list">
+                            <li class="detail-point"><strong>Lawyer</strong> — Arturo Michelena University (UAM), 2009.
+                            </li>
+                            <li class="detail-point"><strong>Master in Public Management</strong> — UNED, Madrid, 2007.
+                            </li>
+                            <li class="detail-point"><strong>Information Engineer</strong> — UNITEC, 1998.</li>
+                            <li class="detail-point">Law School Professor — University of Carabobo (UC), 2011-2017.</li>
+                            <li class="detail-point">Google IT Support & Microsoft Azure (AI-900 / AZ-900) Certified.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="job">
-          <h3>Practicante en Empresa ABC</h3>
-          <p>Junio 2014 - Septiembre 2014</p>
-          <ul>
-            <li>Asistencia en el desarrollo de sitios web.</li>
-            <li>Creación de páginas web utilizando HTML y CSS.</li>
-            <li>Apoyo en tareas de programación en JavaScript y PHP.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact">
-      <div class="container">
-        <h2>Contacto</h2>
-        <form>
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required>
-
-</fieldset>
-          <input type="submit" value="Enviar">
-        </form>
-      </div>
-    </section>
-
-<section id="resume"> <div class="container"> <h2>Descargar currículum</h2> <div class="language-options"> <p>Seleccione un idioma:</p> <ul> <li><a href="#">Español</a></li> <li><a href="#">Inglés</a></li> <li><a href="#">Francés</a></li> </ul> </div> <a href="#" class="button">Descargar</a> </div> </section>
-</main>
-  <footer>
-    <div class="container">
-      <p>Derechos reservados © 2023 | Mi Marca Personal</p>
+        <footer>
+            <p class="footer-name">Agustín Miguel da Costa Valente</p>
+            <p style="color: var(--text-secondary); font-size: 1rem;">Senior Systems Engineer & Legal Tech Specialist
+            </p>
+        </footer>
     </div>
-  </footer>
+
+    <script>
+        const langs = ['es', 'pt', 'en'];
+        const names = { es: 'Español', pt: 'Português', en: 'English' };
+        let currentIdx = 0;
+
+        function cycleLang() {
+            currentIdx = (currentIdx + 1) % langs.length;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            const currentLang = langs[currentIdx];
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === currentLang ? 'block' : 'none';
+            });
+            document.getElementById('lang-toggle').innerText = names[currentLang];
+        }
+
+        updateDisplay();
+    </script>
 </body>
+
 </html>
